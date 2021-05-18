@@ -1,0 +1,26 @@
+# SPDX-FileCopyrightText: 2021 Jelle Licht <jlicht@fsfe.org>
+#
+# SPDX-License-Identifier: CC0-1.0
+#+TITLE: PeteBeat
+
+*  What is this?
+  It is the least functional game ever, for the original Nintendo
+  Gameboy. Mostly intended to be a sanity check for my packaging efforts for
+  the GBdev tooling for GNU Guix.
+
+* How do I build this?
+  You need to have GNU Guix installed, and need to have run ~guix pull~
+  somewhere the 15th of May 2021.
+  #+BEGIN_src bash
+    guix build -f .guix.scm
+  #+END_src
+
+*  How do I run this?
+  #+BEGIN_src bash
+    guix environment --ad-hoc sameboy -- sameboy  $(guix build -f .guix.scm)/share/PeteBeat.gb
+  #+END_src
+
+* TODOS
+** TODO Upstream GBDK-2020 to GNU Guix
+** TODO Upstream png2gbtiles (and the actual GIMP plugins) to GNU Guix
+** TODO Make a "Tiled" plugin to deal with both GBM and GBR files
